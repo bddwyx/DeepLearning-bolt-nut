@@ -29,7 +29,7 @@ def freeze_infer():
     place = fluid.CUDAPlace(0) if cfg.use_gpu else fluid.CPUPlace()
     exe = fluid.Executor(place)
     
-    [inference_program, feed_target_names, fetch_targets] = fluid.io.load_inference_model(dirname='faster-rcnn/freeze_model', executor=exe)
+    [inference_program, feed_target_names, fetch_targets] = fluid.io.load_inference_model(dirname='load/faster-rcnn/freeze_model', executor=exe)
     # yapf: enable
     
     infer_reader = readers.infer(cfg.image_path)
